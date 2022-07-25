@@ -13,6 +13,7 @@ enum NetworkError: LocalizedError {
     case invalidResponse
     case failedResponse(statusCode: Int)
     case emptyData
+    case decodeError
     
     var errorDescription: String? {
         switch self {
@@ -26,15 +27,25 @@ enum NetworkError: LocalizedError {
             return "(\(statusCode)) 실패한 상태코드"
         case .emptyData:
             return "데이터가 없습니다."
+        case .decodeError:
+            return "디코딩 실패"
         }
     }
 }
 
-class NetworkManager {
+class HttpClient {
     
-    func getImageData(completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    private let baseUrl = "https://api.unsplash.com/photos"
+    
+    func getImageData(path: String, params: [String: Any], completion: @escaping (Result<Data, NetworkError>) -> Void) {
         
-        guard let url = URL(string: "") else { return }
+        let queryParams = params.map { k, v in "\(k)=\(v)" }.joined(separator: "&")
+
+        var fullPath = path.hasPrefix("http") ? path : self.baseUrl + path
+        if !queryParams.isEmpty {
+            fullPath += "?" + queryParams
+        }
+        guard let url = URL(string: fullPath) else { return }
         let request = URLRequest(url: url)
         let session = URLSession(configuration: .ephemeral)
         
@@ -55,7 +66,6 @@ class NetworkManager {
                 completion(.failure(.emptyData))
                 return
             }
-            
             completion(.success(data))
             
         }
