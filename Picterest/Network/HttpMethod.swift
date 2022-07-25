@@ -7,7 +7,15 @@
 
 import Foundation
 
-enum HTTPMethod: String{
+enum HttpMethod: String{
     case get = "GET"
-    case post = "POST"
+}
+
+extension HttpMethod {
+    var method: String {
+        switch self {
+        case .get:
+            return "GET"
+        }
+    }
 }
