@@ -13,6 +13,11 @@
 		DE15E66328604278003DD2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE15E66128604278003DD2F5 /* Main.storyboard */; };
 		DE15E66528604279003DD2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE15E66428604279003DD2F5 /* Assets.xcassets */; };
 		DE15E66828604279003DD2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE15E66628604279003DD2F5 /* LaunchScreen.storyboard */; };
+		F0F56DE4288E54B8007AED0C /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F56DE3288E54B8007AED0C /* HttpMethod.swift */; };
+		F0F56DE6288E5617007AED0C /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F56DE5288E5617007AED0C /* HttpClient.swift */; };
+		F0F56DEA288E68A2007AED0C /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F56DE9288E68A2007AED0C /* ImageModel.swift */; };
+		F0F56DEC288E68FB007AED0C /* ImageEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F56DEB288E68FB007AED0C /* ImageEndPoint.swift */; };
+		F0F56DEE288E6D05007AED0C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F56DED288E6D05007AED0C /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		DE15E66428604279003DD2F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE15E66728604279003DD2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE15E66928604279003DD2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F56DE3288E54B8007AED0C /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		F0F56DE5288E5617007AED0C /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		F0F56DE9288E68A2007AED0C /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		F0F56DEB288E68FB007AED0C /* ImageEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEndPoint.swift; sourceTree = "<group>"; };
+		F0F56DED288E6D05007AED0C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		DE15E65A28604278003DD2F5 /* Picterest */ = {
 			isa = PBXGroup;
 			children = (
+				F0F56DE8288E6897007AED0C /* Model */,
+				F0F56DE2288E54A9007AED0C /* Network */,
 				DE15E65B28604278003DD2F5 /* AppDelegate.swift */,
 				DE15E65D28604278003DD2F5 /* SceneDelegate.swift */,
 				DE15E65F28604278003DD2F5 /* ViewController.swift */,
@@ -65,6 +77,25 @@
 				DE15E66928604279003DD2F5 /* Info.plist */,
 			);
 			path = Picterest;
+			sourceTree = "<group>";
+		};
+		F0F56DE2288E54A9007AED0C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F0F56DE3288E54B8007AED0C /* HttpMethod.swift */,
+				F0F56DED288E6D05007AED0C /* Repository.swift */,
+				F0F56DE5288E5617007AED0C /* HttpClient.swift */,
+				F0F56DEB288E68FB007AED0C /* ImageEndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F0F56DE8288E6897007AED0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0F56DE9288E68A2007AED0C /* ImageModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +171,12 @@
 			files = (
 				DE15E66028604278003DD2F5 /* ViewController.swift in Sources */,
 				DE15E65C28604278003DD2F5 /* AppDelegate.swift in Sources */,
+				F0F56DE4288E54B8007AED0C /* HttpMethod.swift in Sources */,
+				F0F56DEE288E6D05007AED0C /* Repository.swift in Sources */,
+				F0F56DEA288E68A2007AED0C /* ImageModel.swift in Sources */,
+				F0F56DEC288E68FB007AED0C /* ImageEndPoint.swift in Sources */,
 				DE15E65E28604278003DD2F5 /* SceneDelegate.swift in Sources */,
+				F0F56DE6288E5617007AED0C /* HttpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
