@@ -11,9 +11,8 @@ final class Repository {
     
     private let httpClient = HttpClient()
     
-    func fetchImageData(_ method: ImageEndPoint, page: Int, completion: @escaping (Result<[PictureData], NetworkError>) -> Void) {
-        let params: [String:Any] = ["client_id": method.accessKey, "page": page, "per_page": 15]
-        httpClient.getImageData(baseUrl: method.baseUrl, path: "", params: params) { result in
+    func fetchImageData(_ endPoint: ImageEndPoint, completion: @escaping (Result<[PictureData], NetworkError>) -> Void) {
+        httpClient.getImageData(endpoint: endPoint) { result in
             switch result {
             case .success(let data):
                 do {
