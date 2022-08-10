@@ -35,16 +35,10 @@ enum NetworkError: LocalizedError {
 
 final class HttpClient {
     
-    func getImageData(baseUrl: String, path: String, params: [String: Any], completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        
-        let queryParams = params.map { k, v in "\(k)=\(v)" }.joined(separator: "&")
-
-        var fullPath = path.hasPrefix("http") ? path : baseUrl + path
-        if !queryParams.isEmpty {
-            fullPath += "?" + queryParams
+    func getImageData(endpoint: ImageEndPoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        guard let request = endpoint.asUrlRequest() else { completion(.failure(.invalidURL))
+            return
         }
-        guard let url = URL(string: fullPath) else { return }
-        let request = URLRequest(url: url)
         let session = URLSession(configuration: .ephemeral)
         
         let task = session.dataTask(with: request) { data, response, error in
@@ -69,5 +63,6 @@ final class HttpClient {
         }
         task.resume()
     }
-    
 }
+
+
