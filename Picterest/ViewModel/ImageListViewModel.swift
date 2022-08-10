@@ -78,7 +78,9 @@ final class ImageListViewModel {
     }
     
     private func resizingImage(page: Int, completion: @escaping () -> Void) -> Void {
-        repository.fetchImageData(.getImage, page: page) { [self] result in
+        
+        let endPoint = ImageEndPoint.getImage(page: page)
+        repository.fetchImageData(endPoint) { [self] result in
             switch result {
             case .success(let imageList):
                 imageList.forEach {
