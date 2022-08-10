@@ -10,7 +10,12 @@ import Foundation
 class URLRepository {
     static var baseUrl: String {
         get {
-            return "https://api.unsplash.com/photos"
+            return "https://api.unsplash.com"
+        }
+    }
+    static var photo: String {
+        get {
+            return "/photos"
         }
     }
 }
