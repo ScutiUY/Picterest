@@ -8,20 +8,25 @@ import UIKit
 
 enum GlobalConstants {
     enum Text {
+        
         enum ViewController {
             static var imageListVC: String = "Picterest"
             static var imageRepositoryVC: String = "Repository"
         }
+        
         enum CoreData {
             static var modelName = "PictureModel"
         }
+        
         enum TabbarItem {
             static var imageListVC: String = "Images"
             static var repositoryVC: String = "Saved"
         }
+        
         enum CollectionViewCell {
             static var identifier = "cell"
         }
+        
         enum Alert {
             static var saveTitle = "메모를 함께 남겨주세요"
             static var save = "저장"
@@ -34,6 +39,7 @@ enum GlobalConstants {
     }
     
     enum Image {
+        
         enum Tabbar {
             case photo
             case star
@@ -47,6 +53,7 @@ enum GlobalConstants {
                 }
             }
         }
+        
         enum PictureCell {
             case saved
             case nomal
